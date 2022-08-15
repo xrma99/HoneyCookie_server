@@ -1,0 +1,42 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}SignUp{% endblock %}
+{% block header %}
+  <h1>Create Your Account</h1>
+{% endblock %}
+
+{% block content %}
+<style>
+  input[type=text], select {
+      width: 50%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+  input[type=password], select {
+      width: 50%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+
+</style>
+
+  <form method="post">
+    <input type="text" name="username" placeholder="username" id="username" required>
+    <br>
+    <input type="password" name="password" placeholder="password" id="password" required>
+    <br>
+    <input type="submit" value="Register">
+  </form>
+  <p>Already have an account? <a href="{{ url_for('auth.login') }}">log in</a></p>
+
+{% endblock %}
